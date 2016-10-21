@@ -13,7 +13,7 @@
 
 ### Required
 
-- [ ] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
+- [X] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
 
 
 ---
