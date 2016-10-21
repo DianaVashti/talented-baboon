@@ -8,15 +8,20 @@ var pgp = require('pg-promise')(options);
 var connectionString = 'postgres://localhost:5432/puppies2';
 var db = pgp(connectionString);
 
+var cycleThroughNames = function (data) {
+  var string = data[0].name;
+  for (var i = 1; i < data.length; i++) {
+    string = string + ', ' + data[i].name;
+  }
+  return string;
+}
+
 function getAllPuppies(req, res, next) {
-  db.any('SELECT pups.name, pupFur.length FROM pups JOIN pupFur ON pups.name=pupFur.name')
+  return db.any('SELECT * FROM pups JOIN pupFur ON pups.name=pupFur.name')
     .then(function (data) {
-      res.status(200)
-        .json({
-          status: 'success',
-          data: data,
-          message: 'Retrieved ALL puppies'
-        });
+      res.render('dogList', {
+        test: cycleThroughNames(data)
+      });
     })
     .catch(function (err) {
       return next(err);
@@ -24,8 +29,9 @@ function getAllPuppies(req, res, next) {
 }
 
 function getSinglePuppy(req, res, next) {
-  var pupID = parseInt(req.params.id);
-  db.one('SELECT * FROM pups WHERE id = $1', pupID)
+  // var pupID = parseInt(req.params.id);
+  console.log(req.cookies);
+  db.one('SELECT * FROM pups WHERE name = $1', req.params.names)
     .then(function ( data ) {
       res.status(200)
         .json({
@@ -41,15 +47,16 @@ function getSinglePuppy(req, res, next) {
 
 function createPuppy(req, res, next) {
   req.body.age = parseInt(req.body.age);
-  db.none('INSERT INTO pups(name, breed, age, sex)' +
-            'values(${name}, ${breed}, ${age}, ${sex})',
+  db.none('START TRANSACTION; INSERT INTO pups(name, breed, age, sex)' +
+            'values(${name}, ${breed}, ${age}, ${sex}); INSERT INTO pupFur(name, color, length) values(${name}, ${color}, ${length}); COMMIT;',
           req.body)
           .then(function () {
-            res.status(200)
-              .json({
-                status: 'success',
-                message: 'Inserted one puppy'
-              });
+            // res.status(200)
+            //   .json({
+            //     status: 'success',
+            //     message: 'Inserted one puppy'
+            //   });
+              res.redirect('/');
           })
           .catch(function (err) {
             return next(err);

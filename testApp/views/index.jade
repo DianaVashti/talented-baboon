@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+    a(class='button' id='getDogs' href="/api/puppies") Get dog names #{test}
+    h3 Enter information to create new dog:
+      form(method="post" action='/api/puppies')
+        input(type="text", placeholder="Dog Name", name="name")
+        input(type="text", placeholder="Dog Breed", name="breed")
+        input(type="text", placeholder="Dog Age", name="age")
+        input(type="text", placeholder="Dog Sex", name="sex")
+        input(type="text", placeholder="Dog Color", name="color")
+        input(type="text", placeholder="Hair Length", name="length")
+        input(type="submit" class='button' value='Create Dog')
+
+      form(method="get" action='/api/puppies/name')
+        input(type="text", placeholder="Dog Name", name="names")
+        input(type="submit" class='button' value='Get dog')
+    //- a(class='button' id='getDogs' href="/api/puppies") Add Dog!

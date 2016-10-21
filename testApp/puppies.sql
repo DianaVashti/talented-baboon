@@ -18,7 +18,7 @@ CREATE TABLE pupFur (
 );
 
 INSERT INTO pups (name, breed, age, sex)
-  VALUES ('Tyler', 'Retriever', 3, 'M');
+  VALUES ('Tyler', 'Retriever', 3, 'M'), ('Mom', 'Awesome', 50, 'F');
 
 INSERT INTO pupFur (name, color, length)
-  VALUES ('Tyler', 'brown', 'long');
+  VALUES ('Tyler', 'brown', 'long'), ('Mom', 'yellow', 'short');
