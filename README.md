@@ -1,6 +1,6 @@
 ## Description
 
-Work through database exercises on [LeetCode](https://leetcode.com/problemset/database/) and [HackerRank](https://www.hackerrank.com/domains/databases/relational-algebra) to build foundational knowledge for working with relational databases.
+
 
 Run your responses against the automated test suites provided by LeetCode and HackerRank while using SQL reference materials to construct your answers.
 
@@ -19,24 +19,19 @@ Foundational knowledge for working with relational databases is important if you
 
 ## Specifications
 
-- [ ] Complete a total of 10 "Easy" and "Medium" level [database challenges](https://leetcode.com/problemset/database/) on LeetCode
-- [ ] Complete 10 [Relational Algebra challenges](https://www.hackerrank.com/domains/databases/relational-algebra/difficulty/all/page/1) on HackerRank
-- [ ] Complete all [Indexes challenges](https://www.hackerrank.com/domains/databases/indexes/difficulty/all/page/1) on HackerRank
-- [ ] Complete all [Set and Algebra challenges](https://www.hackerrank.com/domains/databases/set-and-algebra/difficulty/all/page/1) on HackerRank
-- [ ] Complete 5 [NoSQL - XML, MapReduce challenges](https://www.hackerrank.com/domains/databases/xpath-queries/difficulty/all/page/1) on HackerRank
-- [ ] Complete 5 [Database Normalization challenges](https://www.hackerrank.com/domains/databases/database-normalization/difficulty/all/page/1) on HackerRank
+- [X] Work through exercises in [SQL Teaching](https://www.sqlteaching.com)
+- [X] Work through exercises in [SQLZOO](http://sqlzoo.net/)
+- [X] Complete all 'easy' level [database challenges](https://leetcode.com/problemset/database/) on LeetCode
+- [X] Complete all 'medium' level [database challenges](https://leetcode.com/problemset/database/) on LeetCode
+- [X] Complete 10 [Relational Algebra challenges](https://www.hackerrank.com/domains/databases/relational-algebra/difficulty/all/page/1) on HackerRank
+- [X] Complete all [Indexes challenges](https://www.hackerrank.com/domains/databases/indexes/difficulty/all/page/1) on HackerRank
+- [X] Complete all [Set and Algebra challenges](https://www.hackerrank.com/domains/databases/set-and-algebra/difficulty/all/page/1) on HackerRank
+- [X] Create a simple app using express and node to practice seeing database queries in context
 
 ### Required
 
 - [ ] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
 
-## Quality Rubric
-
-- Quality rubric one: all tests pass for your submissions to both LeetCode and HackerRank
-
-## Helpful resources
-
-[18+ Best Online Resources for Learning SQL and Database Concepts](http://www.vertabelo.com/blog/notes-from-the-lab/18-best-online-resources-for-learning-sql-and-database)
 
 ---
 
